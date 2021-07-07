@@ -4,10 +4,11 @@
     font-weight: bold;
     font-size: 1.75rem;
     padding: 2px;
-    border: 1px;
+    border: 1px solid #e9e6ef;
     width: 30vw;
     box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
     background-color: rgba(255,255,255,0.3);
     justify-content: center;
-    flex-basis: 400px;
+    flex-basis: 450px;
+    margin-bottom: 15px;
 }

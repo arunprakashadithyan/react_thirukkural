@@ -15,7 +15,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>திருக்குறள்</h1>
+        <p style={{fontSize:'3em', fontWeight:'bold'}}>திருக்குறள்</p>
         <HomePage sections={this.props.sections} />
       </div>
     );
