@@ -1,6 +1,13 @@
 .section{
-    color: rgb(3, 11, 83);
+    color: rgb(18 19 27);
     font-family: cursive;
     font-weight: bold;
     font-size: 1.75rem;
+    padding: 2px;
+    border: 1px;
+    width: 30vw;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+    background-color: rgba(255,255,255,0.3);
+    justify-content: center;
+    flex-basis: 400px;
 }

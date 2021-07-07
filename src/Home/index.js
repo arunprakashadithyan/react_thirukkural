@@ -1,9 +1,13 @@
 import React from 'react';
-import Section from '../Section'
+import Section from '../Section';
+import Styles from './index.module.css'
 
-const HomePage =  () => {
+const HomePage =  (props) => {
     return (
-        <Section />
+        <div className={Styles.homepage}>
+            {props.sections && props.sections.map(sectionData => <Section key={sectionData.Index} sectionData = {sectionData} />
+            )}
+        </div>
     )
 }
 

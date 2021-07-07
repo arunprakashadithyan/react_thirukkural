@@ -1,13 +1,13 @@
 import { React } from "react";
 import Styles from './index.module.css'
 
- const Section = () => {
+ const Section = ({sectionData}) => {
     return (
     <div className={Styles.section}>
-        <p>Index: 1</p>
-        <p>Tamil: அறத்துப்பால்</p>
-        <p>English: Virtue</p>
-        <p>Transliteration: Araththuppaal</p>
+        <p>பால்: {sectionData.Index}</p>
+        <p>Tamil: {sectionData.Tamil}</p>
+        <p>English: {sectionData.English}</p>
+        <p>Transliteration: {sectionData.Transliteration}</p>
     </div>
     );
 }
