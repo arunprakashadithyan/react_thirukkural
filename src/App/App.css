@@ -1,3 +1,7 @@
 .App {
   text-align: center;
+  background-image: url('../Images/2170967.jpg');
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
 }
