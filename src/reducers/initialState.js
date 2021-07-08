@@ -1,6 +1,7 @@
 const state = {
     sections: [],
-    chapters: []
+    chapters: [],
+    kurals:[]
 }
 
 export default state;

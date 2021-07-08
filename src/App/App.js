@@ -5,6 +5,7 @@ import {connect} from 'react-redux';
 // import {bindActionCreators} from 'redux';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Chapters from '../Chapters';
+import Kurals from '../Kurals';
 
 class App extends Component {
   constructor(props){
@@ -22,6 +23,7 @@ class App extends Component {
           <Switch>
           <Route path='/' exact component={HomePage} />
           <Route path='/chapter/:sectionIndex' exact component={Chapters} />
+          <Route path='/kurals/:chapterIndex' exact component={Kurals} />
           </Switch>
         </Router>
       </div>

@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {connect} from 'react-redux';
+import { useParams } from 'react-router-dom';
+import {bindActionCreators} from 'redux';
+import * as actions from '../actions'
 import Chapter from './chapter';
 import Styles from './index.module.css'
 
 
-const Chapters = ({chapters}) =>{
+const Chapters = ({chapters, actions}) =>{
+
+    let params = useParams();
+    useEffect(()=>{actions.getChapters(params.sectionIndex)},[params,actions]);
+
     return (
         <div className={Styles.index}>
         {chapters.map(chapter => <Chapter key={chapter.Index} chapter={chapter} />)}
@@ -15,5 +22,10 @@ const Chapters = ({chapters}) =>{
 const mapStateToProps = (state) => {
     return{chapters:state.chapters};
 }
+const mapDispatchToProps = (dispatch) => {
+    return{
+        actions: bindActionCreators(actions,dispatch)
+    }
+}
 
-export default connect(mapStateToProps)(Chapters);
+export default connect(mapStateToProps,mapDispatchToProps)(Chapters);

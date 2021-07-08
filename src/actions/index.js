@@ -6,7 +6,11 @@ export function getAllSections(sections){
 }
 
 export function getAllChapters(chapters){
-    return{type:actionTypes.GET_CHAPTERS_LIST, chapters}
+    return{type:actionTypes.GET_CHAPTERS_LIST, chapters};
+}
+
+export function getAllKurals(kurals){
+    return{type:actionTypes.GET_KURALS_LIST,kurals};
 }
 
 export function getSections() {
@@ -18,5 +22,11 @@ export function getSections() {
 export function getChapters(index){
     return function(dispatch){
         return Api.getChapters(index,chapters => dispatch(getAllChapters(chapters)));
+    }
+}
+
+export function getKurals(index){
+    return function(dispatch){
+        return Api.getKurals(index, kurals => dispatch(getAllKurals(kurals)));
     }
 }
