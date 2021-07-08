@@ -7,4 +7,10 @@ export default class Api {
         .then(response => cb(response.data.Data))
         .catch(err=>console.log(err));
     }
+
+    static getChapters = (index,cb) => {
+        axios.get(`https://api.gokulnath.com/thirukkuralsections/${index}/chapters`)
+        .then(response => cb(response.data.Data))
+        .catch(err => console.log(err))
+    }
 }

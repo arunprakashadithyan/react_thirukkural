@@ -1,5 +1,6 @@
 const state = {
-    sections: []
+    sections: [],
+    chapters: []
 }
 
 export default state;

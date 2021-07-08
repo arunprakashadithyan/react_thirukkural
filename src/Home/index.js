@@ -1,6 +1,7 @@
 import React from 'react';
 import Section from '../Section';
 import Styles from './index.module.css'
+import {connect} from 'react-redux';
 
 const HomePage =  (props) => {
     return (
@@ -11,4 +12,10 @@ const HomePage =  (props) => {
     )
 }
 
-export default HomePage;
+function mapStateToProps(state){
+    return {
+      sections: state.sections
+    }
+  }
+
+export default connect(mapStateToProps)(HomePage);

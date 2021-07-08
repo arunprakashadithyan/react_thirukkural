@@ -1,8 +1,7 @@
-.section{
+.chapter{
     color: rgb(18 19 27);
     font-family: cursive;
     font-weight: bold;
-    font-size: 1.75rem;
     padding: 2px;
     border: 1px solid #e9e6ef;
     width: 30vw;
@@ -12,4 +11,11 @@
     flex-basis: 450px;
     margin-bottom: 15px;
     cursor: pointer;
+}
+.index {
+    padding-top: 5vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
 }

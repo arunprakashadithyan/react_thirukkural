@@ -3,6 +3,8 @@ import HomePage from '../Home'
 import { React, Component } from 'react';
 import {connect} from 'react-redux';
 // import {bindActionCreators} from 'redux';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import Chapters from '../Chapters';
 
 class App extends Component {
   constructor(props){
@@ -16,7 +18,12 @@ class App extends Component {
     return (
       <div className="App">
         <p style={{fontSize:'3em', fontWeight:'bold'}}>திருக்குறள்</p>
-        <HomePage sections={this.props.sections} />
+        <Router>
+          <Switch>
+          <Route path='/' exact component={HomePage} />
+          <Route path='/chapter/:sectionIndex' exact component={Chapters} />
+          </Switch>
+        </Router>
       </div>
     );
   }
