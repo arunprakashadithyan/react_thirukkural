@@ -11,12 +11,18 @@ export default class Api {
     static getChapters = (index,cb) => {
         axios.get(`https://api.gokulnath.com/thirukkuralsections/${index}/chapters`)
         .then(response => cb(response.data.Data))
-        .catch(err => console.log(err))
+        .catch(err => console.log(err));
     }
 
     static getKurals = (index, cb) => {
         axios.get(`https://api.gokulnath.com/thirukkuralchapters/${index}/thirukkurals`)
         .then(response => cb(response.data.Data))
-        .catch(err => console.log(err))
+        .catch(err => console.log(err));
+    }
+
+    static getOneKural = (index, cb) => {
+        axios.get(`https://api.gokulnath.com/thirukkurals/${index}`)
+        .then(response => cb(response.data.Data))
+        .catch(err => console.log(err));
     }
 }

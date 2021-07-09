@@ -10,7 +10,7 @@ import Styles from './index.module.css'
 const Chapters = ({chapters, actions}) =>{
 
     let params = useParams();
-    useEffect(()=>{actions.getChapters(params.sectionIndex)},[params,actions]);
+    useEffect(()=>{actions.getChapters(params.sectionIndex)},[]);
 
     return (
         <div className={Styles.index}>

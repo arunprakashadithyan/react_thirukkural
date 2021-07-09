@@ -13,6 +13,13 @@ export function getAllKurals(kurals){
     return{type:actionTypes.GET_KURALS_LIST,kurals};
 }
 
+export function getBasicKural(kural){
+    return{type:actionTypes.GET_ONE_KURAL,kural}
+}
+
+
+
+
 export function getSections() {
     return function(dispatch){
         return Api.getSections(sections => dispatch(getAllSections(sections)));
@@ -28,5 +35,11 @@ export function getChapters(index){
 export function getKurals(index){
     return function(dispatch){
         return Api.getKurals(index, kurals => dispatch(getAllKurals(kurals)));
+    }
+}
+
+export function getOneKural(index){
+    return function(dispatch){
+        return Api.getOneKural(index, kural => dispatch(getBasicKural(kural)));
     }
 }

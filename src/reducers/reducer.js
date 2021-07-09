@@ -8,7 +8,9 @@ const reducer =  (state = initialState, action) => {
         case types.GET_CHAPTERS_LIST:
             return {...state,chapters:action.chapters};
         case types.GET_KURALS_LIST:
-            return {...state,kurals:action.kurals}
+            return {...state,kurals:action.kurals};
+        case types.GET_ONE_KURAL:
+            return{...state,kural:action.kural}
         default:
             return state;
     }

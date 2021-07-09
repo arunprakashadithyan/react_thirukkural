@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import Styles from './index.module.css';
-import Kural from './kural';
+import KuralPage from './kuralPage';
 import {connect} from 'react-redux'
 import * as actions from '../actions';
 import {bindActionCreators} from 'redux';
@@ -12,11 +12,11 @@ const Kurals = (props) => {
     const {kurals, actions} = props;
     let params = useParams();
 
-    useEffect(()=>{actions.getKurals(params.chapterIndex)},[actions,params])
+    useEffect(()=>{actions.getKurals(params.chapterIndex)},[])
 
     return(
         <div className={Styles.index}>
-            {kurals.map(kural => <Kural key={kural.Index} kural = {kural} />)}
+            {kurals.map(kural => <KuralPage key={kural.Index} kural = {kural} />)}
         </div>
     )
 }
