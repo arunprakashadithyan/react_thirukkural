@@ -17,6 +17,10 @@ export function getBasicKural(kural){
     return{type:actionTypes.GET_ONE_KURAL,kural}
 }
 
+export function getAllComChapters(chapters){
+    return{type:actionTypes.GET_ALL_CHAPTERS, chapters}
+}
+
 
 
 
@@ -41,5 +45,11 @@ export function getKurals(index){
 export function getOneKural(index){
     return function(dispatch){
         return Api.getOneKural(index, kural => dispatch(getBasicKural(kural)));
+    }
+}
+
+export function getComChapters(){
+    return function(dispatch){
+        return Api.getComChapters(chapters => dispatch(getAllComChapters(chapters)));
     }
 }

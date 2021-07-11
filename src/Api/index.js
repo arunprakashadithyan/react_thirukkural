@@ -25,4 +25,10 @@ export default class Api {
         .then(response => cb(response.data.Data))
         .catch(err => console.log(err));
     }
+
+    static getComChapters = (cb) => {
+        axios.get(`https://api.gokulnath.com/thirukkuralchapters/`)
+        .then(response => cb(response.data.Data))
+        .catch(err => console.log(err));
+    }
 }
