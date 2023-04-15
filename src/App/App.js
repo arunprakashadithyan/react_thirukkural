@@ -3,7 +3,7 @@ import HomePage from '../Home'
 import { React, Component } from 'react';
 import { connect } from 'react-redux';
 // import {bindActionCreators} from 'redux';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Chapters from '../Chapters';
 import Kurals from '../Kurals';
 import Kural from '../Kurals/kural';
@@ -22,13 +22,13 @@ class App extends Component {
       <div className="App">
         <Header />
         <Router>
-          <Switch>
-            <Route path='/' exact component={HomePage} />
-            <Route path='/chapter/:sectionIndex' component={Chapters} />
-            <Route path='/chapters' component={Chapters} />
-            <Route path='/kurals/:chapterIndex' component={Kurals} />
-            <Route path='/kural/:kuralIndex' component={Kural} />
-          </Switch>
+          <Routes>
+            <Route path='/' exact element={<HomePage />} />
+            <Route path='/all' element={<Chapters />} />
+            <Route path='/chapter/:sectionIndex' element={<Chapters />} />
+            <Route path='/kurals/:chapterIndex' element={<Kurals />} />
+            <Route path='/kural/:kuralIndex' element={<Kural />} />
+          </Routes>
         </Router>
       </div>
     );

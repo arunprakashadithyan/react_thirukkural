@@ -13,7 +13,7 @@ const Chapters = ({chapters, actions}) =>{
     useEffect(()=>{params.sectionIndex?actions.getChapters(params.sectionIndex):actions.getComChapters()},[]);
 
     return (
-        <div className={Styles.index}>
+        <div data-testid={"chapters"} className={Styles.index}>
         {chapters.map(chapter => <Chapter key={chapter.Index} chapter={chapter} />)}
         </div>
         )

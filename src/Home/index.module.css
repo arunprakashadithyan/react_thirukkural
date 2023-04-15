@@ -1,7 +1,7 @@
 .homepage {
     padding-top: 5vh;
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
     flex-wrap: wrap;
 }

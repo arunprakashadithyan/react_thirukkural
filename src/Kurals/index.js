@@ -15,7 +15,7 @@ const Kurals = (props) => {
     useEffect(()=>{actions.getKurals(params.chapterIndex)},[])
 
     return(
-        <div className={Styles.index}>
+        <div data-testid={"kurals"} className={Styles.index}>
             {kurals.map(kural => <KuralPage key={kural.Index} kural = {kural} />)}
         </div>
     )
