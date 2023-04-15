@@ -1,12 +1,12 @@
 import React from 'react';
 import Styles from './index.module.css';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Chapter = ({ chapter }) => {
-    let history = useHistory();
+    let navigate = useNavigate();
 
     const goToKurals = (index) => {
-        history.push(`/kurals/${index}`)
+        navigate(`/kurals/${index}`)
     }
 
     return (

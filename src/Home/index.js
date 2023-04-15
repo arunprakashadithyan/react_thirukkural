@@ -5,7 +5,7 @@ import {connect} from 'react-redux';
 
 const HomePage =  (props) => {
     return (
-        <div className={Styles.homepage}>
+        <div data-testid={"homepage"} className={Styles.homepage}>
             {props.sections && props.sections.map(sectionData => <Section key={sectionData.Index} sectionData = {sectionData} />
             )}
         </div>

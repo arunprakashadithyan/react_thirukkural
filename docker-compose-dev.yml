@@ -1,0 +1,21 @@
+version: "3"
+services:
+  docker_test:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - .:/usr/app
+    ports:
+      - "3000:3000"
+  tests:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - .:/usr/app
+    command:
+      - npm
+      - test
+      - --
+      - --coverage

@@ -1,0 +1,41 @@
+name: Deploy Thirukkural
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: docker build -t arun/react_thirukkural -f Dockerfile.dev .
+      - run: docker run -e CI=true arun/react_thirukkural npm test a -- --coverage
+      - name: Generate Deployment Package
+        run: zip -r deploy.zip . -x '*.git*'
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/head/main'
+    steps:
+      - uses: actions/checkout@v2
+      - name: Generate deployment package
+        run: zip -r deploy.zip . -x '*.git*'
+
+      - name: Deploy to EB
+        uses: einaregilsson/beanstalk-deploy@v18
+        with:
+          aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws_session_token: ${{ secrets.AWS_SESSION_TOKEN }}
+          application_name: docker-thirukkural
+          environment_name: Dockertest-env
+          existing_bucket_name: elasticbeanstalk-ap-south-1-160071257600
+          region: ap-south-1
+          version_label: ${{ github.sha }}
+          deployment_package: deploy.zip
+
+

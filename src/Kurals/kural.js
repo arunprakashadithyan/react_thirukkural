@@ -15,7 +15,7 @@ const Kural = ({kural,actions}) => {
     useEffect(()=>{actions.getOneKural(params.kuralIndex)},[])
     
     return(
-        <div className={Styles.kural}>
+        <div data-testid={"kural"} className={Styles.kural}>
         <div className={Styles.bottom}><label>குறள்: </label> {kural.Index}</div>
         <div className={Styles.bottom}><label>Tamil: </label>{parseAndAlign(kural.Tamil)}</div>
         <div className={Styles.bottom}><label>KalaignarUrai: </label>{parseAndAlign(kural.KalaignarUrai)}</div>
